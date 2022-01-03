@@ -20,7 +20,23 @@ public class QueryWithParameter {
         try {
             conn = DriverManager.getConnection(url, user, pwd);
             System.out.println("Connection : " + conn);
+            int totalAmount = 9000;
+            String saleDateStart = "20190101";
+            String saleDateEnd = "20190102";
             String query = "";
+            /*query += "select To_char(pp.SALE_DATE, 'YYYY-MM-DD') as SALE_DATE,\n"
+                + "       A.PRODUCT_NO,\n"
+                + "       A.PRODUCT_NAME,\n"
+                + "       ppd.PRICE,\n"
+                + "       ppd.QTY,\n"
+                + "       ppd.PRICE * ppd.QTY                 as TOTAL_AMOUNT\n"
+                + "from product A\n"
+                + "         join PRODUCT_PURCHASE_DETAIL PPD on A.PRODUCT_NO = PPD.PRODUCT_NO\n"
+                + "         join PRODUCT_PURCHASE PP on PP.ACCOUNT_NO = PPD.ACCOUNT_NO\n"
+                + "where PP.SALE_DATE <= To_date("+ saleDateEnd+ ", 'YYYYMMDD')\n"
+                + "  and PP.TOTAL >="+ totalAmount +"\n"
+                + "  and PP.SALE_DATE >= To_date("+ saleDateStart+", 'YYYYMMDD')";*/
+
             query += "select To_char(pp.SALE_DATE, 'YYYY-MM-DD') as SALE_DATE,\n"
                 + "       A.PRODUCT_NO,\n"
                 + "       A.PRODUCT_NAME,\n"
@@ -30,10 +46,15 @@ public class QueryWithParameter {
                 + "from product A\n"
                 + "         join PRODUCT_PURCHASE_DETAIL PPD on A.PRODUCT_NO = PPD.PRODUCT_NO\n"
                 + "         join PRODUCT_PURCHASE PP on PP.ACCOUNT_NO = PPD.ACCOUNT_NO\n"
-                + "where PP.SALE_DATE <= To_date(20190102, 'YYYYMMDD')\n"
-                + "  and PP.TOTAL >= 9000\n"
-                + "  and PP.SALE_DATE >= To_date(20190101, 'YYYYMMDD')";
+                + "where PP.SALE_DATE <= To_date(?)\n"
+                + "  and PP.TOTAL >= ? \n"
+                + "  and PP.SALE_DATE >= To_date(?)";
             pstmt = conn.prepareStatement(query);
+
+
+            pstmt.setString(1, saleDateEnd);
+            pstmt.setInt(2, totalAmount);
+            pstmt.setString(3, saleDateStart);
             rs = pstmt.executeQuery();
 
             ResultSetMetaData rsmd = rs.getMetaData();

@@ -1,0 +1,6 @@
+
+#text-left-1{-fx-background-color: green;}
+TextField .text-left {-fx-background-color: pink;}
+.text-right {-fx-background-color: yellow;}
+#text-right-4 {-fx-background-color: orange;}
+TextField {-fx-background-color: red;}

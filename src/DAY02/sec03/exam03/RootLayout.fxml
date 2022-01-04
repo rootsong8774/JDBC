@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="194.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField id="text-left-1" layoutX="12.0" layoutY="35.0" styleClass="text-left" />
+      <TextField id="text-left-2" layoutX="12.0" layoutY="70.0" styleClass="text-left" />
+      <TextField id="text-left-3" layoutX="12.0" layoutY="105.0" styleClass="text-left" />
+      <TextField id="text-left-4" layoutX="12.0" layoutY="140.0" styleClass="text-left" />
+      <TextField id="text-right-1" layoutX="191.0" layoutY="35.0" styleClass="text-right" />
+      <TextField id="text-right-2" layoutX="191.0" layoutY="70.0" styleClass="text-right" />
+      <TextField id="text-right-3" layoutX="191.0" layoutY="105.0" styleClass="text-right" />
+      <TextField id="text-right-4" layoutX="191.0" layoutY="140.0" styleClass="text-right" />
+   </children>
+</AnchorPane>

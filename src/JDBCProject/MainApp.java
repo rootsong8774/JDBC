@@ -2,8 +2,6 @@ package JDBCProject;
 
 import java.util.Arrays;
 import java.util.List;
-
-
 import java.util.Objects;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

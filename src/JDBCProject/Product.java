@@ -1,11 +1,12 @@
-package Day03.main;
+package JDBCProject;
 
 public class Product {
+
     private String productNo;
     private String productName;
     private int price;
-    public Product(){
 
+    public Product() {
     }
 
     public Product(String productNo, String productName, int price) {
@@ -30,7 +31,7 @@ public class Product {
         this.productName = productName;
     }
 
-    public Integer getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -38,13 +39,11 @@ public class Product {
         this.price = price;
     }
 
-
     @Override
     public String toString() {
-        return "Product" + " [" +
-            "productNo='" + productNo + '\'' +
-            ", productName='" + productName + '\'' +
-            ", price=" + price +
-            ']';
+        return "Product [productNo=" + productNo + ", productName=" + productName + ", price="
+            + price + "]";
     }
+
+
 }

@@ -38,4 +38,8 @@ public class MainViewBorder extends Application {
 
 
     }
+
+    public static void main(String[] args) {
+        Application.launch(MainViewBorder.class);
+    }
 }

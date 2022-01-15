@@ -53,4 +53,8 @@ public class MainViewGrid extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+    public static void main(String[] args) {
+        Application.launch(MainViewGrid.class);
+    }
 }

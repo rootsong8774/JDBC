@@ -34,4 +34,8 @@ public class MainViewBind extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+    public static void main(String[] args) {
+        Application.launch(MainViewBind.class);
+    }
 }
